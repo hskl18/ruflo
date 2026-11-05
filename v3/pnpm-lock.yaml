@@ -121,7 +121,7 @@ importers:
         specifier: 3.7.5
         version: link:../cli-core
       '@claude-flow/codex':
-        specifier: 3.0.5
+        specifier: 3.0.6
         version: link:../codex
       '@claude-flow/mcp':
         specifier: 3.1.6
@@ -151,8 +151,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0
       '@ruvector/rabitq-wasm':
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.1.2
+        version: 0.1.2
       '@ruvector/typesafe':
         specifier: ^0.1.0
         version: 0.1.0
@@ -235,12 +235,18 @@ importers:
       '@napi-rs/keyring':
         specifier: 1.3.0
         version: 1.3.0
+      '@ruvector/learning-wasm':
+        specifier: 0.1.29
+        version: 0.1.29
+      agent-booster:
+        specifier: ^0.2.2
+        version: 0.2.2
       agentdb:
         specifier: ^3.3.0
-        version: 3.3.0(@types/node@20.19.27)(zod@3.25.76)
+        version: 3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76)
       agentic-flow:
         specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.19.27)
+        version: 3.0.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)
       better-sqlite3:
         specifier: 12.9.0
         version: 12.9.0
@@ -248,8 +254,8 @@ importers:
         specifier: ^2.7.0
         version: 2.25.2(typescript@5.9.3)
       ruvector:
-        specifier: ^0.2.27
-        version: 0.2.41(zod@3.25.76)
+        specifier: ^0.3.11
+        version: 0.3.11(@ruvector/rabitq-wasm@0.1.2)(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76)
     devDependencies:
       tsx:
         specifier: ^4.19.0
@@ -486,7 +492,7 @@ importers:
     optionalDependencies:
       agentdb:
         specifier: ^2.0.0 || ^3.0.0-alpha.1
-        version: 3.3.0(@types/node@20.19.27)(zod@3.25.76)
+        version: 3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76)
 
   '@claude-flow/performance':
     dependencies:
@@ -2130,6 +2136,7 @@ packages:
   /@metaharness/workspace-lens@0.1.1:
     resolution: {integrity: sha512-BkEdTvjD2PEhkGTCmtTIPnoeaOsxvzFtsFEAurwVKlVOu4hQetHeXDfiyAYheWg8Cp4fcGcr7E5MO1ptQveQ2g==}
     requiresBuild: true
+    dev: false
     optional: true
 
   /@metaharness/workspace-lens@0.1.2:
@@ -2142,7 +2149,7 @@ packages:
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@metaharness/workspace-lens': 0.1.1
+      '@metaharness/workspace-lens': 0.1.2
     optional: true
 
   /@modelcontextprotocol/client@2.4.0:
@@ -5846,9 +5853,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@ruvector/rabitq-wasm@0.1.0:
-    resolution: {integrity: sha512-Uu7fupcJw8x+QBhJLKAfIK0CyH55fQ8niexJwbnSrYEtSX93ScWSOJBr/zTLR/hd0Md9Dq7ZaatzIDB7uJqazg==}
-    dev: false
+  /@ruvector/rabitq-wasm@0.1.2:
+    resolution: {integrity: sha512-SFJK59QPaT4l9IB/7xD6EITzYRB5A/S1LItkOMQ5pGP73mDprJybEjnMxzg+mvp3HHiEF9g4+R//FFo9PXn49A==}
 
   /@ruvector/router-darwin-arm64@0.1.25:
     resolution: {integrity: sha512-dmhjtpN4p8itJGt+pCrLst091vvIoIBma1EbV//sF620inwBPn1ctav+0IpTpSVUVCbHB6MzGqwaCFs+gcnVNQ==}
@@ -6115,6 +6121,13 @@ packages:
       '@ruvector/rvf-wasm': 0.1.9
     optional: true
 
+  /@ruvector/sona-darwin-arm64@0.1.10:
+    resolution: {integrity: sha512-KDb++39pQ8hg1Wy9z6qmPQKWusskitgLMxTZlbTqiHgC7LxnMH4AkA0fsZnJUOLxohhWvSEFVnPZ4DNP9qnR5Q==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    optional: true
+
   /@ruvector/sona-darwin-arm64@0.1.5:
     resolution: {integrity: sha512-+bXB7+WdbkiNbcw0Xh5VENNILgDVpuma7fyx8NwGylWaYRe1niM03k/rezdM3zbpf4qGSqp6fVKIIDU8/H9lHw==}
     cpu: [arm64]
@@ -6123,17 +6136,9 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-darwin-arm64@0.1.7:
-    resolution: {integrity: sha512-7J1Mpakghe9iTZc2cTTMK6dtMQLhSQKxG9bN1LAakp0Gn/r6N7qmbJEJWGx4vZcsYoQKPbl9ijIDKLgEu92qAQ==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-darwin-arm64@0.1.8:
-    resolution: {integrity: sha512-lv8YOBTamryaAKsjGgYe8TvAW/pccTJhwLexaBre0KpCp1BPnULqT4lYQQB4YjIQqML4cuzSIoDHRH9a9JwTtQ==}
-    cpu: [arm64]
+  /@ruvector/sona-darwin-x64@0.1.10:
+    resolution: {integrity: sha512-fxK6eIIfsTJIJbO9gbuhLVgjH6HmqsfY6t1hBzABTwBcaLG7iX60G//fdOW580wLy2vmSTdS1TmTIxnHo2RVKw==}
+    cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
@@ -6146,18 +6151,10 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-darwin-x64@0.1.7:
-    resolution: {integrity: sha512-elFfUL9fYd+6uP7R64KEiq+8adpyrIKv2f8WVUU42OXQ1K0KWMrLYWW5NzPVcS/KHv1t0eUwc06HnqWgA8KXaQ==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-darwin-x64@0.1.8:
-    resolution: {integrity: sha512-a5jRBNQSo60698kIbVoDxj28nuVxpdpYKj/3gvFy3Z0wUlXc4jkz+r+Wpwn/mFOq5xDCm6VHsiYPRYA4/EBQcg==}
-    cpu: [x64]
-    os: [darwin]
+  /@ruvector/sona-linux-arm64-gnu@0.1.10:
+    resolution: {integrity: sha512-kqpSo2fhF4s6SGpy4Ap/4IaAZOGP5qkyaw4Fi6HXCTUe4WYZcpOGVhL5VsiaWBPCRqqHj5zpQ95pPyG/awH0qA==}
+    cpu: [arm64]
+    os: [linux]
     requiresBuild: true
     optional: true
 
@@ -6169,17 +6166,9 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-linux-arm64-gnu@0.1.7:
-    resolution: {integrity: sha512-ihpsAPnggDQ6vPi1It8d+bUcwCngYGL3DmC3kyIZ0hWUzuxRx45abmgPqVCtc58hllNXaY/nJ9guiQFF2JNcDg==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-linux-arm64-gnu@0.1.8:
-    resolution: {integrity: sha512-rYoJdW3cDVIgORqSZoSzYgPkC0L4K9KoxsdZFdiXpKWGP9SWOwUXLVIbNeEk+Po+QNoju02TXAf+lLva+VmI7w==}
-    cpu: [arm64]
+  /@ruvector/sona-linux-x64-gnu@0.1.10:
+    resolution: {integrity: sha512-tarsh0L5UW7INzVWobp7WLQY4IJZVU4OmbzSrJgrejG66a5Qr3gCVIqpno5FqM9jufOnKq/tsuKRtNTPo+xdxQ==}
+    cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
@@ -6192,16 +6181,8 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-linux-x64-gnu@0.1.7:
-    resolution: {integrity: sha512-IqCNJw1fyjkSZkSf2sB/IMKfCxLv5+9aAUo6lEpfnR60vP33pbCxLzcZDVDcIpcaTSbe3DHcH5DYNu+C1v8yvQ==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-linux-x64-gnu@0.1.8:
-    resolution: {integrity: sha512-5dtjvRk/buod4JBnfJaSXLWwvOTkDTt8l8yiK53VfIBeTHLVD4HxCs2UXOanf367KNKrSWlIkssE/UCtX8jtUQ==}
+  /@ruvector/sona-linux-x64-musl@0.1.10:
+    resolution: {integrity: sha512-8YdaDc4GAuVwqv79eDokMCtzV+jMevIiCraFSQ+pItFn8Jmi+2Q2mcUyVH2g/glfeRjSFQYUSC/W7yFJiiWIfA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
@@ -6215,18 +6196,10 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-linux-x64-musl@0.1.7:
-    resolution: {integrity: sha512-zMCvbcgl7h8GLLOLFqDx1ud+hHHhzSoHbLmvVOuW+U0ARbtwJTu4piyzvm4KuPnfTEn6jTgQsNU2wEUfh8dIjg==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-linux-x64-musl@0.1.8:
-    resolution: {integrity: sha512-9f9ZYzvUuuUrUoZOAtXRfG0ZEDEOJj8+1hnyk7Yf9yj7taocb048tTcKDRrHmAiUBOgt8Nm9Qo+TetvxVnkKYA==}
-    cpu: [x64]
-    os: [linux]
+  /@ruvector/sona-win32-arm64-msvc@0.1.10:
+    resolution: {integrity: sha512-NUzYU94CUWzKAf7xZHUYvqOUvIkk2TUbCgAH33yphlH6mLQpCcC03Xt+9UdYvFk0NVA0ZLZ62UrzNwwTasmQxw==}
+    cpu: [arm64]
+    os: [win32]
     requiresBuild: true
     optional: true
 
@@ -6238,17 +6211,9 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-win32-arm64-msvc@0.1.7:
-    resolution: {integrity: sha512-9VHEEImhrG6s56Jj4VfXbQ8HfJZ02K/3nYWHpgeJnIdSglkGIOJiplFLeCbvFrfBvFWTL9TmtXUrxpIRxNKkFQ==}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-win32-arm64-msvc@0.1.8:
-    resolution: {integrity: sha512-LKhT9x9Tkz4SvEKO5PSjj0fj30hSS4DYmWd+mxf2y1iF9GfDzWxy2OxTkDJ8t/fT9YD+N7Da32lfRrWcKzc3AA==}
-    cpu: [arm64]
+  /@ruvector/sona-win32-x64-msvc@0.1.10:
+    resolution: {integrity: sha512-kw99twEsiu+QEcHJ8gQRt/XVjOpUb0R6r5dvaVirtjbeNFPFGivuji4JTGwREZgxB6rmAdXTyJZ++Ul1OIZ3Rg==}
+    cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
@@ -6261,20 +6226,17 @@ packages:
     dev: false
     optional: true
 
-  /@ruvector/sona-win32-x64-msvc@0.1.7:
-    resolution: {integrity: sha512-bVLG2GKAyb1uhm+p7ngLAR3Z6ocl0lukd0OLbJ8K6Cf4Cdz9RQgEytajyucyoaPr9tV3LkAhM41Ibiwks4eVoA==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@ruvector/sona-win32-x64-msvc@0.1.8:
-    resolution: {integrity: sha512-eu1GbQ3RjhrKuT4cKoYT56RLCJ7v30iBlVSh+I9lUCE6CNFvyejQwTL+I/g1eIpT4LX/i2g2YEWzYFeFQrhaew==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    optional: true
+  /@ruvector/sona@0.1.10:
+    resolution: {integrity: sha512-z+WyumpoJbtpQiZD9D/CtQfrTInZkupqvkDttxiNun+0lzXjVVw30k1kWCKJeGxQAI+GPirjrT7eBcxl+hTvpw==}
+    engines: {node: '>= 16'}
+    optionalDependencies:
+      '@ruvector/sona-darwin-arm64': 0.1.10
+      '@ruvector/sona-darwin-x64': 0.1.10
+      '@ruvector/sona-linux-arm64-gnu': 0.1.10
+      '@ruvector/sona-linux-x64-gnu': 0.1.10
+      '@ruvector/sona-linux-x64-musl': 0.1.10
+      '@ruvector/sona-win32-arm64-msvc': 0.1.10
+      '@ruvector/sona-win32-x64-msvc': 0.1.10
 
   /@ruvector/sona@0.1.5:
     resolution: {integrity: sha512-XHQbphnWsRzWRWGK/HxK+RreY6OdlggMrOvrfkWlEq8EctHVy2ASwps7hk25Somx8Umj7+CkNuyQEbHcNcl/oQ==}
@@ -6288,33 +6250,6 @@ packages:
       '@ruvector/sona-win32-arm64-msvc': 0.1.5
       '@ruvector/sona-win32-x64-msvc': 0.1.5
     dev: false
-
-  /@ruvector/sona@0.1.7:
-    resolution: {integrity: sha512-TR112g0QoiwavKGk+bogNm++F7LDZ4ko47pR1L/b0kuWfNi8FiW8CVLI/7GSIAJPS3VEfI86Cm7HYiEedc/dTQ==}
-    engines: {node: '>= 16'}
-    requiresBuild: true
-    optionalDependencies:
-      '@ruvector/sona-darwin-arm64': 0.1.7
-      '@ruvector/sona-darwin-x64': 0.1.7
-      '@ruvector/sona-linux-arm64-gnu': 0.1.7
-      '@ruvector/sona-linux-x64-gnu': 0.1.7
-      '@ruvector/sona-linux-x64-musl': 0.1.7
-      '@ruvector/sona-win32-arm64-msvc': 0.1.7
-      '@ruvector/sona-win32-x64-msvc': 0.1.7
-    dev: false
-    optional: true
-
-  /@ruvector/sona@0.1.8:
-    resolution: {integrity: sha512-IzeaJr0hH7E55vya00ruSKtqZ7qNfqeTwUPnDOusZR+A0IczX+6p8y7mKO74kYc66ozlyfFg1StAvyE+W3ROoA==}
-    engines: {node: '>= 16'}
-    optionalDependencies:
-      '@ruvector/sona-darwin-arm64': 0.1.8
-      '@ruvector/sona-darwin-x64': 0.1.8
-      '@ruvector/sona-linux-arm64-gnu': 0.1.8
-      '@ruvector/sona-linux-x64-gnu': 0.1.8
-      '@ruvector/sona-linux-x64-musl': 0.1.8
-      '@ruvector/sona-win32-arm64-msvc': 0.1.8
-      '@ruvector/sona-win32-x64-msvc': 0.1.8
 
   /@ruvector/tiny-dancer-darwin-arm64@0.1.15:
     resolution: {integrity: sha512-99vy9OLjppPj3kjusQnirgLvOnBt6Jrt2pij3Fvs5pzyp+zh04gb1np0tFR4JCxftKnuoKYqN7bCtQvgQbBBSg==}
@@ -7478,7 +7413,7 @@ packages:
       '@ruvector/graph-node': 0.1.26
       '@ruvector/router': 0.1.30
       '@ruvector/ruvllm': 2.6.0
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       ajv: 8.20.0
       chalk: 5.6.2
       cli-table3: 0.6.5
@@ -7548,7 +7483,7 @@ packages:
       '@ruvector/rvf-node': 0.1.8
       '@ruvector/rvf-solver': 0.1.8
       '@ruvector/rvf-wasm': 0.1.9
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       argon2: 0.44.0
       better-sqlite3: 12.9.0
       chalk: 5.6.2
@@ -7568,7 +7503,7 @@ packages:
       - zod
     dev: false
 
-  /agentdb@3.3.0(@types/node@20.19.27)(zod@3.25.76):
+  /agentdb@3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76):
     resolution: {integrity: sha512-KcDnlPil+ISxOW4v0yLgntH1ZgkGIsILXznDLzmgM6tcWmvaktVZrcgh2iv9vuJ1f5OvwtRuvJ0YUBbHj1NTUQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -7593,14 +7528,14 @@ packages:
       '@ruvector/rvf-node': 0.1.8
       '@ruvector/rvf-solver': 0.1.8
       '@ruvector/rvf-wasm': 0.1.9
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       argon2: 0.44.0
       better-sqlite3: 12.9.0
       chalk: 5.6.2
       commander: 12.1.0
       hnswlib-node: 3.0.0
       inquirer: 9.3.8(@types/node@20.19.27)
-      ruvector: 0.3.5(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76)
+      ruvector: 0.3.11(@ruvector/rabitq-wasm@0.1.2)(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76)
       ruvector-attention-wasm: 0.1.32
       ruvector-graph-transformer-wasm: 2.0.4
     transitivePeerDependencies:
@@ -7608,8 +7543,10 @@ packages:
       - '@metaharness/kernel'
       - '@ruvector/diskann'
       - '@ruvector/pi-brain'
+      - '@ruvector/rabitq-wasm'
       - '@types/node'
       - agenticow
+      - rvlite
       - supports-color
       - zod
     optional: true
@@ -7766,8 +7703,8 @@ packages:
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.60.3
       '@ruvector/attention': 0.1.32
-      '@ruvector/sona': 0.1.8
-      agentdb: 3.3.0(@types/node@20.19.27)(zod@3.25.76)
+      '@ruvector/sona': 0.1.10
+      agentdb: 3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76)
       better-sqlite3: 12.9.0
       onnxruntime-node: 1.24.3
       sharp: 0.32.6
@@ -7778,6 +7715,7 @@ packages:
       - '@modelcontextprotocol/sdk'
       - '@ruvector/diskann'
       - '@ruvector/pi-brain'
+      - '@ruvector/rabitq-wasm'
       - '@types/node'
       - '@valibot/to-json-schema'
       - agenticow
@@ -7789,6 +7727,7 @@ packages:
       - effect
       - jose
       - react-native-b4a
+      - rvlite
       - supports-color
       - sury
       - utf-8-validate
@@ -7825,9 +7764,9 @@ packages:
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.60.3
       '@ruvector/attention': 0.1.32
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       '@xenova/transformers': 2.17.2
-      agentdb: 3.3.0(@types/node@20.19.27)(zod@3.25.76)
+      agentdb: 3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76)
       better-sqlite3: 12.9.0
       onnxruntime-node: 1.24.3
       sharp: 0.32.6
@@ -7838,6 +7777,7 @@ packages:
       - '@modelcontextprotocol/sdk'
       - '@ruvector/diskann'
       - '@ruvector/pi-brain'
+      - '@ruvector/rabitq-wasm'
       - '@types/node'
       - '@valibot/to-json-schema'
       - agenticow
@@ -7849,6 +7789,7 @@ packages:
       - effect
       - jose
       - react-native-b4a
+      - rvlite
       - supports-color
       - sury
       - utf-8-validate
@@ -7886,7 +7827,7 @@ packages:
       zod: 3.25.76
     optionalDependencies:
       '@ruvector/attention': 0.1.32
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       agentdb: 2.0.0-alpha.3.7(@types/node@20.19.27)(express@5.2.1)(marked@11.2.0)
       better-sqlite3: 12.9.0
       onnxruntime-node: 1.24.3
@@ -7912,7 +7853,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /agentic-flow@3.0.0(@types/node@20.19.27):
+  /agentic-flow@3.0.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27):
     resolution: {integrity: sha512-HTn8/lMOlQmi2FDRcSCk/9UjHMxLu0RXwfyhpBFJr38q8EAMk5/YEqCe4o9d0Sw/NXc0lrvQ6OgbF8oLjNY/Xw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
@@ -7929,7 +7870,7 @@ packages:
       '@ruvector/ruvllm': 2.6.0
       '@ruvector/tiny-dancer': 0.1.22
       '@supabase/supabase-js': 2.89.0
-      agentdb: 3.3.0(@types/node@20.19.27)(zod@3.25.76)
+      agentdb: 3.3.0(@ruvector/rabitq-wasm@0.1.2)(@types/node@20.19.27)(zod@3.25.76)
       axios: 1.13.2(debug@4.4.3)
       dotenv: 16.6.1
       express: 5.2.1
@@ -7937,7 +7878,7 @@ packages:
       glob: 13.0.6
       gun: 0.2020.1241
       http-proxy-middleware: 3.0.5
-      ruvector: 0.3.5(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76)
+      ruvector: 0.3.11(@ruvector/rabitq-wasm@0.1.2)(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76)
       ruvector-onnx-embeddings-wasm: 0.1.2
       tiktoken: 1.0.22
       ulid: 3.0.2
@@ -7947,7 +7888,7 @@ packages:
     optionalDependencies:
       '@rollup/rollup-darwin-arm64': 4.60.3
       '@ruvector/attention': 0.1.32
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       better-sqlite3: 12.9.0
       onnxruntime-node: 1.24.3
       sharp: 0.35.5(@types/node@20.19.27)
@@ -7958,6 +7899,7 @@ packages:
       - '@modelcontextprotocol/sdk'
       - '@ruvector/diskann'
       - '@ruvector/pi-brain'
+      - '@ruvector/rabitq-wasm'
       - '@types/node'
       - '@valibot/to-json-schema'
       - agenticow
@@ -7966,6 +7908,7 @@ packages:
       - debug
       - effect
       - jose
+      - rvlite
       - supports-color
       - sury
       - utf-8-validate
@@ -11078,7 +11021,7 @@ packages:
     dependencies:
       '@metaharness/darwin': 0.2.8
       '@metaharness/flywheel': 0.1.10
-      '@metaharness/redblue': 0.1.4
+      '@metaharness/redblue': 0.1.6
       '@metaharness/weight-eft': 0.1.1
       kolorist: 1.8.0
       prompts: 2.4.2
@@ -11106,6 +11049,7 @@ packages:
       - '@modelcontextprotocol/sdk'
       - '@ruvector/diskann'
       - '@ruvector/pi-brain'
+      - '@ruvector/rabitq-wasm'
       - '@types/node'
       - '@valibot/to-json-schema'
       - agenticow
@@ -11117,6 +11061,7 @@ packages:
       - effect
       - jose
       - react-native-b4a
+      - rvlite
       - supports-color
       - sury
       - utf-8-validate
@@ -12601,7 +12546,7 @@ packages:
       '@ruvector/attention': 0.1.32
       '@ruvector/core': 0.1.30
       '@ruvector/gnn': 0.1.25
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       chalk: 4.1.2
       commander: 11.1.0
       ora: 5.4.1
@@ -12621,7 +12566,7 @@ packages:
       '@ruvector/attention': 0.1.32
       '@ruvector/core': 0.1.30
       '@ruvector/gnn': 0.1.25
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       '@xenova/transformers': 2.17.2
       chalk: 4.1.2
       commander: 11.1.0
@@ -12669,7 +12614,7 @@ packages:
       '@ruvector/gnn': 0.1.25
       '@ruvector/router': 0.1.30
       '@ruvector/ruvllm': 2.6.0
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       chalk: 4.1.2
       commander: 11.1.0
       metaharness: 0.4.2
@@ -12685,64 +12630,18 @@ packages:
     dev: false
     optional: true
 
-  /ruvector@0.2.41(zod@3.25.76):
-    resolution: {integrity: sha512-6ox6kcONkFxKhOv6yAp6FKonn+WlNQ8t0tnK9xsOJKkQEru1psptGrObPA57VenaZ7pToEUvvgiLJYLc9uukIg==}
+  /ruvector@0.3.11(@ruvector/rabitq-wasm@0.1.2)(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76):
+    resolution: {integrity: sha512-yy/9o9gQW1L/mQyqDRgSGd1zF+Vcyls2sB7cvjBcRHW8DGDn5LNwFDzZltJJvAi6AuD9F3utj4z41AQIInU0aw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     requiresBuild: true
     peerDependencies:
       '@ruvector/diskann': '>=0.1.0'
       '@ruvector/pi-brain': '>=0.1.0'
+      '@ruvector/rabitq-wasm': '>=0.1.1'
       '@ruvector/router': '>=0.1.0'
       '@ruvector/ruvllm': '>=2.6.0'
-    peerDependenciesMeta:
-      '@ruvector/diskann':
-        optional: true
-      '@ruvector/pi-brain':
-        optional: true
-      '@ruvector/router':
-        optional: true
-      '@ruvector/ruvllm':
-        optional: true
-    dependencies:
-      '@metaharness/darwin': 0.8.0
-      '@metaharness/flywheel': 0.1.7
-      '@metaharness/harness': 0.1.0
-      '@metaharness/redblue': 0.1.4
-      '@metaharness/router': 0.3.2(@ruvector/tiny-dancer@0.1.22)
-      '@metaharness/weight-eft': 0.1.1
-      '@metaharness/workspace-lens': 0.1.1
-      '@metaharness/workspace-probe': 0.1.1
-      '@modelcontextprotocol/sdk': 1.32.1(zod@3.25.76)
-      '@ruvector/attention': 0.1.32
-      '@ruvector/core': 0.1.30
-      '@ruvector/gnn': 0.1.25
-      '@ruvector/sona': 0.1.7
-      chalk: 4.1.2
-      commander: 11.1.0
-      metaharness: 0.4.2
-      ora: 5.4.1
-    optionalDependencies:
-      '@ruvector/rvf': 0.3.4
-      '@ruvector/tiny-dancer': 0.1.22
-    transitivePeerDependencies:
-      - '@cfworker/json-schema'
-      - '@metaharness/kernel'
-      - supports-color
-      - zod
-    dev: false
-    optional: true
-
-  /ruvector@0.3.5(@ruvector/router@0.1.30)(@ruvector/ruvllm@2.6.0)(zod@3.25.76):
-    resolution: {integrity: sha512-n/7ypDfpfu3zizWOu8mRCW/Mxbn7+4sP6FWhikpjXghb+ed4ejTnZVf3OLzDDYHCmVa5wAl+G/uDMWE0npm8nQ==}
-    engines: {node: '>=20.0.0'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@ruvector/diskann': '>=0.1.0'
-      '@ruvector/pi-brain': '>=0.1.0'
-      '@ruvector/router': '>=0.1.0'
-      '@ruvector/ruvllm': '>=2.6.0'
+      rvlite: '>=0.2.0'
     peerDependenciesMeta:
       '@metaharness/darwin':
         optional: true
@@ -12764,20 +12663,25 @@ packages:
         optional: true
       '@ruvector/pi-brain':
         optional: true
+      '@ruvector/rabitq-wasm':
+        optional: true
       '@ruvector/router':
         optional: true
       '@ruvector/ruvllm':
         optional: true
       metaharness:
         optional: true
+      rvlite:
+        optional: true
     dependencies:
       '@modelcontextprotocol/sdk': 1.32.1(zod@3.25.76)
       '@ruvector/attention': 0.1.32
       '@ruvector/core': 0.1.30
       '@ruvector/gnn': 0.1.25
+      '@ruvector/rabitq-wasm': 0.1.2
       '@ruvector/router': 0.1.30
       '@ruvector/ruvllm': 2.6.0
-      '@ruvector/sona': 0.1.8
+      '@ruvector/sona': 0.1.10
       chalk: 4.1.2
       commander: 11.1.0
       ora: 5.4.1
